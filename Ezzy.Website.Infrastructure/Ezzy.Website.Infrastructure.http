@@ -1,0 +1,6 @@
+@Ezzy.Website.Infrastructure_HostAddress = http://localhost:5234
+
+GET {{Ezzy.Website.Infrastructure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
