@@ -30,8 +30,7 @@ namespace Ezzy.Website.Infrastructure.Repository.Repositories
                     {"Email", new AttributeValue{ S= contactItem.Email} },
                     {"Company", new AttributeValue{ S= contactItem.Company} },
                     {"Phone", new AttributeValue{ S= contactItem.Phone} },
-                    {"Message", new AttributeValue{ S= contactItem.Message} },
-                    {"Budget", new AttributeValue{ S= contactItem.Budget} }
+                    {"Message", new AttributeValue{ S= contactItem.Message} }
                 }
             };
             await _dynamoDbClient.PutItemAsync(request);
@@ -61,7 +60,6 @@ namespace Ezzy.Website.Infrastructure.Repository.Repositories
                 Company = response.Item["Company"].S,
                 Phone = response.Item["Phone"].S,
                 Message = response.Item["Message"].S,
-                Budget = response.Item["Budget"].S
             };
 
         }
@@ -84,8 +82,7 @@ namespace Ezzy.Website.Infrastructure.Repository.Repositories
                     Email = item["Email"].S,
                     Company = item["Company"].S,
                     Phone = item["Phone"].S,
-                    Message = item["Message"].S,
-                    Budget = item["Budget"].S
+                    Message = item["Message"].S
                 });
             }
             return contactItemList;

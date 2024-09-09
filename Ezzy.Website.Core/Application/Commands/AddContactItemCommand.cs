@@ -12,6 +12,5 @@ namespace Ezzy.Website.Core.Application.Commands
         public string Phone { get; set; }
         public string Company { get; set; }
         public string Message { get; set; }
-        public string Budget { get; set; }
     }
 }

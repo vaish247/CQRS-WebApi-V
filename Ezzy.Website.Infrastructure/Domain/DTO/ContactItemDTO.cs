@@ -7,7 +7,6 @@
         string Email,
         string Phone,
         string Company,
-        string Message,
-        string Budget
+        string Message
     );
 }

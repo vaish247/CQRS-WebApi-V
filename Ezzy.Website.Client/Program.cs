@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Amazon.Lambda.AspNetCoreServer;
 
 namespace Ezzy.Website.Client
 {
