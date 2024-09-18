@@ -5,17 +5,17 @@ using Ezzy.Website.Infrastructure.Domain.Interfaces;
 
 namespace Ezzy.Website.Core.Application.Handlers
 {
-    public class GetAllContactItemHandler : IRequestHandler<GetAllContactItemQuery, IEnumerable<ContactItem>>
+    public class GetAllClientItemHandler : IRequestHandler<GetAllClientItemQuery, IEnumerable<ClientItem>>
     {
-        private readonly IContactItemRepository _repository;
+        private readonly IClientItemRepository _repository;
         
-        public GetAllContactItemHandler(IContactItemRepository repository)
+        public GetAllClientItemHandler(IClientItemRepository repository)
         {
             _repository = repository;
         }
-        public async Task<IEnumerable<ContactItem>> Handle(GetAllContactItemQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<ClientItem>> Handle(GetAllClientItemQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetAllContactItemsAsync();
+            return await _repository.GetAllClientItemsAsync();
         }
     }
 }

@@ -11,7 +11,8 @@ namespace Ezzy.Website.Core.Application.Mapping
         {
             CreateMap<ContactItem, ContactItemDTO>().ReverseMap();
             CreateMap<AddContactItemCommand, ContactItem>().ReverseMap();
-        
+            CreateMap<ClientItem, ClientItemDTO>().ReverseMap();
+            CreateMap<AddClientItemCommand, ClientItem>().ReverseMap();
         }
     }
 }
