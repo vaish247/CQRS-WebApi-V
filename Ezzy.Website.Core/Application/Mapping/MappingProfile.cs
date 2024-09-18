@@ -13,6 +13,11 @@ namespace Ezzy.Website.Core.Application.Mapping
             CreateMap<AddContactItemCommand, ContactItem>().ReverseMap();
             CreateMap<ClientItem, ClientItemDTO>().ReverseMap();
             CreateMap<AddClientItemCommand, ClientItem>().ReverseMap();
+            CreateMap<CompanyItem, CompanyItemDTO>().ReverseMap();
+            CreateMap<AddCompanyItemCommand, CompanyItem>().ReverseMap();
+            CreateMap<CaseStudyItem, CaseStudyItemDTO>().ReverseMap();
+            CreateMap<AddCaseStudyItemCommand, CaseStudyItem>().ReverseMap();
+
         }
     }
 }

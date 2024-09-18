@@ -85,6 +85,9 @@ namespace Ezzy.Website.Client
             // Register repositories
             services.AddSingleton<IContactItemRepository, ContactItemRepository>();
             services.AddSingleton<IClientItemRepository, ClientItemRepository>();
+            services.AddSingleton<ICaseStudyItemRepository, CaseStudyItemRepository>();
+            services.AddSingleton<ICompanyItemRepository, CompanyItemRepository>();
+
 
             // Register MediatR
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AddContactItemHandler).Assembly));

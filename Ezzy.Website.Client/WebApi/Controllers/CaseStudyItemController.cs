@@ -8,22 +8,22 @@ using Ezzy.Website.Infrastructure.Domain.Entities;
 namespace Ezzy.Website.Client.WebApi.Controllers
 {
     [ApiController]
-    [Route("clientItems")]
-    public class ClientItemController : ControllerBase
+    [Route("caseStudyItems")]
+    public class CaseStudyItemController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public ClientItemController(IMediator mediator)
+        public CaseStudyItemController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ClientItem>>> GetAllClientItemsAsync()
+        public async Task<ActionResult<IEnumerable<CaseStudyItem>>> GetAllCaseStudyItemsAsync()
         {
             try
             {
-                var query = new GetAllClientItemQuery();
+                var query = new GetAllCaseStudyItemQuery();
                 var items = await _mediator.Send(query);
                 return items != null ? Ok(items) : NotFound();
             }
@@ -34,12 +34,12 @@ namespace Ezzy.Website.Client.WebApi.Controllers
             }
         }
 
-        [HttpGet("{pk}/{sk}", Name = "clientItemsGetBypksk")]
-        public async Task<ActionResult<ClientItem>> GetClientItemAsync(string pk, string sk)
+        [HttpGet("{pk}/{sk}", Name = "caseStudyItemsGetBypksk")]
+        public async Task<ActionResult<CaseStudyItem>> GetCaseStudyItemAsync(string pk, string sk)
         {
             try
             {
-                var query = new GetClientItemQuery { pk = pk, sk = sk };
+                var query = new GetCaseStudyItemQuery { pk = pk, sk = sk };
                 var item = await _mediator.Send(query);
                 return item != null ? Ok(item) : NotFound();
             }
@@ -51,7 +51,7 @@ namespace Ezzy.Website.Client.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ClientItemDTO>> AddClientItemAsync([FromBody] AddClientItemCommand command)
+        public async Task<ActionResult<CaseStudyItemDTO>> AddCaseStudyItemAsync([FromBody] AddCaseStudyItemCommand command)
         {
             if (command == null)
             {
@@ -62,7 +62,7 @@ namespace Ezzy.Website.Client.WebApi.Controllers
             {
                 var item = await _mediator.Send(command);
                 return item != null
-                    ? CreatedAtRoute("clientItemsGetBypksk", new { pk = item.pk, sk = item.sk }, item)
+                    ? CreatedAtRoute("caseStudyItemsGetBypksk", new { pk = item.pk, sk = item.sk }, item)
                     : BadRequest("Failed to create item.");
             }
             catch (Exception ex)
@@ -73,11 +73,11 @@ namespace Ezzy.Website.Client.WebApi.Controllers
         }
 
         [HttpDelete("{pk}/{sk}")]
-        public async Task<ActionResult> DeleteClientItem(string pk, string sk)
+        public async Task<ActionResult> DeleteCaseStudyItem(string pk, string sk)
         {
             try
             {
-                var result = await _mediator.Send(new DeleteClientItemCommand { pk = pk, sk = sk });
+                var result = await _mediator.Send(new DeleteCaseStudyItemCommand { pk = pk, sk = sk });
                 return result ? NoContent() : NotFound();
             }
             catch (Exception ex)
