@@ -15,12 +15,10 @@ A Web API with a functional REST API connected to its own DynamoDB database, imp
    
 2. **Start The Application**
    Once inside the directory, start the application by running the following command:
+   ```bash
    dotnet run --project ./Ezzy.Website.Client/Ezzy.Website.Client.csproj
 
-3. **Access Swagger UI**
+4. **Access Swagger UI**
    After starting the application, open the following URL in your browser to access the Swagger UI and view the API's documentation:
+      ```bash
    https://localhost:7169/swagger/index.html
-
-
-   
-
